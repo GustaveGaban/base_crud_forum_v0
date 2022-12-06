@@ -19,7 +19,7 @@
     <!-- Type à modifier en password ! -->
     <input type="text" name="mdp" id="mdp"><br>
 
-    <input type="button" value="OK">
+    <input type="submit" value="OK">
     </form>
     
 </body>

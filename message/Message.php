@@ -32,3 +32,27 @@ class Message
 
 
 }
+
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveau Message</title>
+</head>
+<body>
+    <form action="" method="post">
+        <h2>Nouveau Sujet</h2>
+        <label for="sujet">Sujet : </label>
+        <input type="texte" name="sujet" id="sujet"><br>
+
+        <label for="message">Votre message : </label>
+        <textarea name="nvMessage" id="nvMessage" cols="30" rows="5" placeholder="Ecrivez ici votre message"></textarea><br>
+
+        <input type="submit" value="Envoyer">
+    
+    </form>
+</body>
+</html>
