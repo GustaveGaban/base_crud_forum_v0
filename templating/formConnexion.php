@@ -8,11 +8,16 @@
 </head>
 <body>
     <form action="" method="post">
-    <label for="pseudo">Pseudo</label>
-    <input type="text" name="pseudo" id=""><br>
-    <label for="mdp">Mot de Passe</label>
-    <input type="text" name="mdp" id="mdp">
-    <input type="button" value="OK">
+
+        <label for="pseudo">Pseudo</label>
+        <input type="text" name="pseudo" id=""><br>
+
+        <label for="mdp">Mot de Passe</label>
+    <!-- Type à modifier en password ! -->
+        <input type="text" name="mdp" id="mdp"><br>
+
+        <input type="button" value="OK">
+
     </form>
 </body>
 </html>
