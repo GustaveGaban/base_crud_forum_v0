@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 06 déc. 2022 à 08:57
+-- Généré le : mar. 06 déc. 2022 à 12:12
 -- Version du serveur : 10.4.25-MariaDB
 -- Version de PHP : 8.1.10
 
@@ -57,9 +57,15 @@ CREATE TABLE `users` (
   `pseudo` varchar(16) DEFAULT NULL,
   `mail` varchar(64) DEFAULT NULL,
   `mdp` varchar(32) DEFAULT NULL,
-  `token` varchar(64) DEFAULT NULL,
-  `message_id` int(11) NOT NULL
+  `token` varchar(64) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id`, `pseudo`, `mail`, `mdp`, `token`) VALUES
+(2, 'coucou', 'victor.helary@gmail.com', '$2y$10$/FVo1Xx.HlrG53RHGDs1gOWPP', NULL);
 
 --
 -- Index pour les tables déchargées
@@ -82,8 +88,7 @@ ALTER TABLE `sujets`
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `Foreign_key_message` (`message_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -105,7 +110,7 @@ ALTER TABLE `sujets`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Contraintes pour les tables déchargées
@@ -116,12 +121,6 @@ ALTER TABLE `users`
 --
 ALTER TABLE `messages`
   ADD CONSTRAINT `Foreign_key_sujet` FOREIGN KEY (`sujet_id`) REFERENCES `sujets` (`id`);
-
---
--- Contraintes pour la table `users`
---
-ALTER TABLE `users`
-  ADD CONSTRAINT `Foreign_key_message` FOREIGN KEY (`message_id`) REFERENCES `messages` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
