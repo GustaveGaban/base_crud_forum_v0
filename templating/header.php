@@ -43,9 +43,12 @@ require 'inc.functions.php';
 
         </div>
             
-        <div class="rechercher"> 
+        <div class="rechercher">
+            <!-- si la fonction isConnected est true (on aurait pu marqué == true mais c'est raccourci) -->
+						<?php if (isConnected()) { //alors on affiche les boutons suivant : ?>
                 <input type="text" name="search" id="rechercher" placeholder="🔍">
                 <input type="submit" value="Ok">
+                        <?php }
         </div>
 
     </div>
