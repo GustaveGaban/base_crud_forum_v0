@@ -26,8 +26,8 @@
         </div>
 
         <div class="nav">
-            <a href="formInscription.php" type="button">Inscription</a>
-            <a href="formConnexion.php" type="button">Connexion</a><br>
+            <!-- <a href="formInscription.php" type="button">Inscription</a>
+            <a href="formConnexion.php" type="button">Connexion</a><br> -->
 
         </div>
             

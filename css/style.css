@@ -1,8 +1,9 @@
+/* STYLE DE LA PAGE */
 *{
     margin: 0;
     padding: 0;
 }
-
+/* STYLE DU HEADER */
 .conteneurAccueil
 {
     display: grid;
@@ -79,10 +80,38 @@ h1
     
   
 }
-.footer{
-    border-color: #04baf6;
-    background-color: #04baf6;
-    color: black; 
-    font-size: 17px;
 
+/* STYLE DU FOOTER */
+
+.footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    background-color: black;
+    color: #04baf6; 
+    height: 200px;
+    
+    
+}
+.mentions{
+    grid-column: 2;
+    grid-row: 3;
+    font-size: 13px;
+    text-align: center;
+}
+.signature{
+    text-align: center;
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 15px;
+    font-family: 'Kenia', cursive;
+    font-family: 'Zen Dots', cursive;
+}
+
+/* STYLE DU FORMULAIRE DE CONNEXION */
+
+.formConnex{
+    background-color: black;
+    color: #04baf6; 
+    opacity: 70%;
 }
