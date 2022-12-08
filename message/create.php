@@ -50,7 +50,7 @@ $reqSujet="";
     echo 'Votre sujet est '.$titreSujet.'<br>';
     echo 'La date du sujet est '.$dateSujet.'<br>';
 
-echo 'coucou';
+
     
     //CREATION MESSAGE DANS LA BDD
 
