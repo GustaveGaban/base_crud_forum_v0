@@ -9,15 +9,22 @@
 <body>
 
 <?php include 'header.php'; ?>
+<div class="nvMsg">
 
-    <h2>NOUVEAU SUJET DE DISCUSSION</h2>
+    
 
-    <form action="../message/create.php" method="post">
-        Sujet : <input type="text" name="sujet" id="sujet" placeholder="sujet"><br>
-        Votre message : <input type="text" name="message" id="message" placeholder="message"><br>
-        <input type="submit" value="OK">
+    <div class="formNvMsg">
 
-    </form>
+    <h2>NOUVEAU TOPIC</h2><br>
+
+        <form action="../message/create.php" method="post">
+             Sujet : <br><input type="text" name="sujet" id="sujet"><br>
+             Votre message : <br><textarea type="text" name="message" id="message"></textarea><br>
+             <input id="btnOK" type="submit" value="OK">
+
+        </form>
+    </div>
+</div>
 
 <?php include 'footer.php'; ?>
 

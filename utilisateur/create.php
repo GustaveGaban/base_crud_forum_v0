@@ -1,6 +1,23 @@
 <?php
 require "./inc/functions.php";
-require "../connect/bdd_connect.php";
+//require "../connect/bdd_connect.php";
+//require "../templating/db.php";
+
+
+
+try
+{	
+
+	$bdd=new PDO('mysql:host=localhost;dbname=forum_users','root','');
+	 
+}
+catch(Exception $e)
+{
+	
+	die('<strong>Erreur détectée !!! </strong>' . $e->getMessage());
+}
+
+
 // pseudo mail mdp
 if (isset($_POST)) {
     $errors = array();   
@@ -23,9 +40,20 @@ if (isset($_POST)) {
     if (empty($_POST["mdp"])||(!preg_match('/^[a-zA-Z0-9_!\/*$%]+$/', $_POST["mdp"]))) {
         $errors["mdp"] = "Mot de passe invalide.";
     }
-
-   
-
+    // if (empty($_POST["photo"])) {
+    //     $errors["photo"] = "photo invalide.";
+    // }
+    // if (!empty($_POST)) { // debug($_POST);
+    //     $photo_bdd = "";
+    //     if (!empty($_FILES['photo']['name'])) { // debug($_FILES);
+    //         $nom_photo = $_POST['pseudo'] . '_' . $_FILES['photo']['name'];
+    //         $photo_bdd = '../images/$nom_photo';
+    //         $photo_dossier = $_SERVER['DOCUMENT_ROOT'] . '../images/$nom_photo';
+    //         copy($_FILES['photo']['tmp_name'], $photo_dossier);
+    //     }
+      
+    // }
+    
     if (empty($errors)){               
         $req= $bdd-> prepare("INSERT into users (pseudo, mail, mdp) VALUES (:pseudo,:mail,:mdp)")or die (print_r($bdd->errorInfo()));
         $password = password_hash($_POST["mdp"],PASSWORD_BCRYPT);
@@ -34,7 +62,9 @@ if (isset($_POST)) {
         $req->execute([
             "pseudo"=>$_POST["pseudo"],
             "mail"=>$_POST["mail"], 
-            "mdp"=>$password]);        
+            "mdp"=>$password
+           // "photo"=>$_POST['photo']
+        ]);        
         echo "<div style = 'background-color : limegreen; font-family: sans-serif; color: white; padding:1%'><p>Compte créé.</p></div>";
         
         // mail($_POST["mail"], "Confirmation de votre compte","Afin de valider votre connexion, cliquez sur ce lien"." <br><br>"."http://localhost/base_crud_forum_v0/utilisateur/confirm.php?id=$user_id&token=$token");
@@ -46,7 +76,9 @@ if (isset($_POST)) {
         die();
     }
 
-}?>
+}
+
+?>
 
 <!-- <!DOCTYPE html>
 <html lang="en">

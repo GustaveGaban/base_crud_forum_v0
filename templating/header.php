@@ -23,17 +23,38 @@
             
             <h1>BLABLA_POST</h1><br>
 
-        </div>
+         </div>
+         <!-- <div class="nav">  -->
+           
+ <?php
+        //    require('../inc/functions.php') ?>
+        <!--    <div class="nav">
+        //     <?php
+        //    if (isConnected()) { 
+        //         echo '<a href="../accueil.php" class="button primary">Se déconnecter</a><br>';
+        //     }
+        //                 else { 
+        //    echo '<a href="formInscription.php" type="button">Inscription</a>';
+        //    echo '<a href="formConnexion.php" type="button">Connexion</a><br>';
+        //              }
+?>  
+            </div> -->
 
-        <div class="nav">
-            <!-- <a href="formInscription.php" type="button">Inscription</a>
-            <a href="formConnexion.php" type="button">Connexion</a><br> -->
+          <div class="nav">
+             <a href="formInscription.php" type="button">Inscription</a>
+             <a href="formConnexion.php" type="button">Connexion</a>
+             <a href="../accueil.php" type="button">Déconnexion</a> 
+        </div> 
 
-        </div>
+        <div class="profil">
+                <?php
+                echo 'Coucou $photo + $name';
+                ?>
+             </div>
             
         <div class="rechercher"> 
                 <input type="text" name="search" id="rechercher" placeholder="🔍">
-                <input type="submit" value="Ok">
+                <input id="btnOK" type="submit" value="Ok">
         </div>
 
     </div>
