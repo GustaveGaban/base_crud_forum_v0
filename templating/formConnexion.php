@@ -7,7 +7,7 @@
     <title>Connexion</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="./se_connecter.php" method="post">
 
         <label for="pseudo">Pseudo</label>
         <input type="text" name="pseudo" id=""><br>
@@ -16,7 +16,7 @@
     <!-- Type à modifier en password ! -->
         <input type="text" name="mdp" id="mdp"><br>
 
-        <input type="button" value="OK">
+        <input type="submit" value="Se connecter">
 
     </form>
 </body>

@@ -5,12 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
-    
+    <title>Inscription</title>    
 </head>
 <body>
-
-<form action="../utilisateur/create.php" method="POST">
+<form action="../utilisateur/create_user.php" method="POST">
 
     <label for="pseudo">Pseudo : </label>
     <input type="text" name="pseudo" id="pseudo"><br>

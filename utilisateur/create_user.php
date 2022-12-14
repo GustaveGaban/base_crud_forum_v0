@@ -1,5 +1,5 @@
 <?php
-require "./inc/functions.php";
+require "../inc/functions.php";
 require "../connect/bdd_connect.php";
 // pseudo mail mdp
 if (isset($_POST)) {
@@ -24,8 +24,6 @@ if (isset($_POST)) {
         $errors["mdp"] = "Mot de passe invalide.";
     }
 
-   
-
     if (empty($errors)){               
         $req= $bdd-> prepare("INSERT into users (pseudo, mail, mdp) VALUES (:pseudo,:mail,:mdp)")or die (print_r($bdd->errorInfo()));
         $password = password_hash($_POST["mdp"],PASSWORD_BCRYPT);
@@ -45,18 +43,6 @@ if (isset($_POST)) {
         echo "<br><a href = '../templating/formInscription.php' style = 'color:navy; border:1px solid navy; padding:4px'>Retour</a>";        
         die();
     }
+}
+?>
 
-}?>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
-</body>
-</html> -->
